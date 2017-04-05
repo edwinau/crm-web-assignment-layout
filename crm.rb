@@ -9,6 +9,8 @@ Contact.create("Greg", "Boone", "Boonev@rogers.com","CEO")
 Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO')
 Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
 Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
+Contact.create('Betty', 'Maker', 'betty@bitmakerlabs.com', 'Developer')
+
 
 get "/" do
   @crm_app_name = "Edwin's CRM"
@@ -31,6 +33,7 @@ post '/contacts' do
 end
 
 get "/search_contact" do
+  contact = Contact.find(1000)
   erb :search_contact
 end
 
@@ -40,4 +43,9 @@ get "/delete_contact" do
   # end
   Contact.delete
   redirect to('/contacts')
+end
+
+get '/contacts/1' do
+  @contact = Contact.find(1)
+  erb :show_contact
 end

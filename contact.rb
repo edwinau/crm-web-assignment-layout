@@ -10,7 +10,7 @@ class Contact
   attr_accessor :first_name, :last_name, :email, :note
 
   @@contacts = []
-  @@id = 100
+  @@id = 1
 
   # This method should initialize the contact's attributes
   def initialize(first_name, last_name, email, note)
@@ -19,7 +19,7 @@ class Contact
     @email = email
     @note = note
     @id = @@id
-    @@id += 10
+    @@id += 1
   end
 
   def self.classcontact
@@ -42,13 +42,8 @@ class Contact
 
   # This method should accept an id as an argument
   # and return the contact who has that id
-  def self.find(id_find)
-    @@contacts.each do |person|
-      if person.id == id_find
-        return person
-      end
-    end
-    return nil
+  def self.find(id)
+    @@contacts.find { |contact| contact.id == id }
   end
 
   # This method should allow you to specify
