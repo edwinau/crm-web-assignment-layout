@@ -40,6 +40,4 @@ get "/delete_contact" do
   # end
   Contact.delete
   redirect to('/contacts')
-
-
 end

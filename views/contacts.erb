@@ -3,10 +3,11 @@
 <ul>
 
 <% Contact.all.each do |contact| %>
-<li class=contacts_each><%= contact.first_name %> <%= contact.last_name %>
-    <a href="modify_contact">Edit</a>
-    <a href="delete_contact">Delete</a>
-</li>
+<div class=contacts_each>
+<li><%= contact.first_name %> <%= contact.last_name %></li>
+    <p class=contacts_p><a href="modify_contact" input= >Edit</a></p>
+    <p class=contacts_p><a href="delete_contact">Delete</a></p>
+</div>
 <% end %>
 
 </ul>

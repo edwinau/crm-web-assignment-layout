@@ -80,7 +80,7 @@ footer p{
   text-align: right;
   opacity: .9;
   padding: 5px 15px;
-  font-size: .5em;
+  font-size: .9em;
 }
 
 .h1contactserb{
@@ -96,7 +96,7 @@ footer p{
 
 
 
-li.contacts_each{
+.contacts_each{
   display: block;
   margin: 3px 20px 3px 20px;
   padding: 10px;
@@ -105,6 +105,13 @@ li.contacts_each{
   font-family: arial;
   list-style: none;
 }
+
+.contacts_p{
+  display: inline;
+  font: auto;
+  font-size: .5em;
+}
+
 
 
 
