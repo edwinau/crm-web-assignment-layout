@@ -1,0 +1,50 @@
+#happy{
+  background-color: #ff3600;
+  padding-left: 20px;
+  margins: 0px 10px 0px 10px;
+}
+
+#main{
+  font-family: arial;
+  color: white;
+  background-color: black;
+  text-align: center;
+  opacity: .8;
+  padding: 20px;
+  font-size: 2em;
+}
+
+ul {
+  margin: 0px 20px 0px 20px;
+  background-color: #3d918c;
+  font-size: 2em;
+  font-family: arial;
+  list-style: none;
+
+}
+
+#bar{
+  color: white;
+  background-color: #3d4e91;
+  text-align: center;
+  padding: 3px;
+  font-size: 1.5em;
+  margin: 1px;
+
+}
+
+footer p{
+  font-family: arial;
+  color: white;
+  background-color: black;
+  text-align: right;
+  opacity: .9;
+  padding: 5px 15px;
+  font-size: .5em;
+}
+
+#clock{
+  color: black;
+  font-size: .8em;
+  text-align: right;
+}

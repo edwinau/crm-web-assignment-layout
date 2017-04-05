@@ -2,9 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+    <title>edwinau.com</title>
   </head>
-  <body>
 
-  </body>
+  <body>
+      <h1 id=main>YOUR DATABASE</h1>
+
+      <nav>
+        <p id=bar>Home</p>
+        <p id=bar>Add a contact</p>
+        <p id=bar>About</p>
+      </nav>
+
+
+
+       <%=yield%>
+
+
+      <footer>
+        <p>  &copy Edwin 2016 </p>
+      </footer>
+
+<h6 id=clock><%= @server_time%></h6>
+
+
+        </body>
 </html>

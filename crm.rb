@@ -11,7 +11,7 @@ Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
 Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
 
 get "/" do
-  @crm_app_name = "Contact List"
+  @crm_app_name = "Edwin's CRM"
   @server_time = Time.now
   erb :index
 end
@@ -25,7 +25,11 @@ get "/new_contact" do
 end
 
 post '/contacts' do
-  Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
+  Contact.create(options)
   redirect to('/contacts')
   puts params
+end
+
+get "/search_contact" do
+  erb :search_contact
 end
