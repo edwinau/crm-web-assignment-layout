@@ -9,7 +9,7 @@ class Contact
   attr_reader :id
   attr_accessor :first_name, :last_name, :email, :note
 
-  @@contacts =[]
+  @@contacts = []
   @@id = 100
 
   # This method should initialize the contact's attributes
@@ -20,6 +20,10 @@ class Contact
     @note = note
     @id = @@id
     @@id += 10
+  end
+
+  def self.classcontact
+    @@contacts
   end
 
   # This method should call the initializer,

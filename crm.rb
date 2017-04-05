@@ -33,3 +33,13 @@ end
 get "/search_contact" do
   erb :search_contact
 end
+
+get "/delete_contact" do
+  # @@contacts.delete_if do |contact|
+  # contact.first_name == self.first_name
+  # end
+  Contact.delete
+  redirect to('/contacts')
+
+
+end

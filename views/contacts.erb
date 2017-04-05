@@ -1,7 +1,12 @@
-<h1 id="happy">There are <span><%=Contact.all.count%></span> contacts</h1>
+<h1 class=h1contactserb>There are <span class=contactspananswers><%=Contact.all.count%></span> contacts</h1>
 
-<ul id=wrap>
+<ul>
+
 <% Contact.all.each do |contact| %>
-  <li><%= contact.first_name %> <%= contact.last_name %></li>
+<li class=contacts_each><%= contact.first_name %> <%= contact.last_name %>
+    <a href="modify_contact">Edit</a>
+    <a href="delete_contact">Delete</a>
+</li>
 <% end %>
+
 </ul>
