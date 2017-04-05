@@ -37,12 +37,14 @@ get "/search_contact" do
   erb :search_contact
 end
 
-get "/delete_contact" do
-  # @@contacts.delete_if do |contact|
-  # contact.first_name == self.first_name
-  # end
-  Contact.delete
-  redirect to('/contacts')
+delete '/contacts/:id' do
+  @contact = Contact.find(params[:id].to_i)
+  if @contact
+    @contact.delete
+    redirect to('/contacts')
+  else
+    raise Sinatra::NotFound
+  end
 end
 
 get '/contacts/:id' do

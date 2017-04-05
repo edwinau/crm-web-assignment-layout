@@ -95,9 +95,10 @@ class Contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
       @@contacts.delete_if do |contact|
-      contact.first_name == self.first_name
+      contact.id == self.id
     end
   end
+  
 end
 
   # def self.delete_if(first_name)
