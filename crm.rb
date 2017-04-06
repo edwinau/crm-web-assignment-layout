@@ -9,7 +9,6 @@ Contact.create("Greg", "Boone", "Boonev@rogers.com","CEO")
 Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO')
 Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
 Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
-Contact.create('Betty', 'Maker', 'betty@bitmakerlabs.com', 'Developer')
 
 
 get "/" do
@@ -27,9 +26,8 @@ get "/new_contact" do
 end
 
 post '/contacts' do
-  Contact.create(options)
+  Contact.create(params[:first_name],params[:last_name],params[:email],params[:note])
   redirect to('/contacts')
-  puts params
 end
 
 get "/search_contact" do
@@ -46,6 +44,10 @@ delete '/contacts/:id' do
     raise Sinatra::NotFound
   end
 end
+
+
+
+
 
 get '/contacts/:id' do
   @contact = Contact.find(params[:id].to_i)
@@ -64,6 +66,18 @@ get '/contacts/:id/edit' do
     raise Sinatra::NotFound
   end
 end
+
+get '/contacts/:id/delete' do
+  @contact = Contact.find(params[:id].to_i)
+  if @contact
+    @contact.delete
+    redirect to('/contacts')
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+
 
 put '/contacts/:id/edit' do
   @contact = Contact.find(params[:id].to_i)
